@@ -134,7 +134,7 @@ def make_stan_gpr(squared=True):
 			  matrix[N, N] K1 = diag_post_multiply(X, kappa) *  X';
 			  matrix[N, N] K2 = diag_post_multiply(X2, kappa) *  X2';
 			  matrix[N, N] K3 = diag_post_multiply(X, square(kappa)) *  X';
-			  matrix[N, N] K = .5 * square(eta_2) * square(K1 + 1.0) + (square(alpha) - .5 * square(eta_2)) * K2 + (square(eta_1) - square(eta_2)) * K1 + square(c) - .5 * square(eta_2) - square(eta_1) * K_1 + square(eta_1) * K_3;
+			  matrix[N, N] K = .5 * square(eta_2) * square(K1 + 1.0) + (square(alpha) - .5 * square(eta_2)) * K2 + (square(eta_1) - square(eta_2)) * K1 + square(c) - .5 * square(eta_2) - square(eta_1) * K1 + square(eta_1) * K3;
 			  
 			  // diagonal elements
 			  for (n in 1:N)
